@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_js_eval import js_eval
+from st import js_eval
 
 st.title("Get client info")
 
