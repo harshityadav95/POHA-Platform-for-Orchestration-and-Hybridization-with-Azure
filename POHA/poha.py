@@ -1,30 +1,37 @@
 import streamlit as st
 import os
 
+import env_local
 ## other dependencies
-#from vis_helpers import sidebar, authors, visualisation, main_page
-#from vis_helpers import pca, rsd, enhancement_factor
+# from vis_helpers import sidebar, authors, visualisation, main_page
+# from vis_helpers import pca, rsd, enhancement_factor
 
-from ui_helpers import sidebar, author, vm, main_page, policy, resource_group
+from ui_pages import sidebar, author, vm, main_page, policy, resource_group, builddetails, workflowtracker
 
 
 def main():
     sidebar.sidebar_head()
 
-    analysis_type = st.sidebar.selectbox("Select Action", ['Main Page', 'Policy', 'Virtual Machine', 'Resource Group', 'RSD'])
+    module_type = st.sidebar.selectbox("Select Module",
+                                       ['Main Page', 'Workflow Tracker', 'Policy', 'Virtual Machine', 'Resource Group',
+                                        'RSD', 'Azure Cheat Sheet'])
 
-    if analysis_type == 'Main Page':
+    if module_type == 'Main Page':
         main_page.main_page()
-    if analysis_type == 'Policy':
+    elif module_type == 'Workflow Tracker':
+        workflowtracker.workflowtracker()
+    elif module_type == 'Policy':
         policy.main()
-    elif analysis_type == 'Virtual Machine':
+    elif module_type == 'Virtual Machine':
         vm.main()
-    elif analysis_type == 'Resource Group':
+    elif module_type == 'Resource Group':
         resource_group.main()
 
     author.show_developers()
+    builddetails.builddetailsfooter()
+
 
 if __name__ == '__main__':
+    env_local.loadEnvironmentVariables()
     main()
-
-    print("Streamlit Load Complete")
+    print("POHA Load Complete")
