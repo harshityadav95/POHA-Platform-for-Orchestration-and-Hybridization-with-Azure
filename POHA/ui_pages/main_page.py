@@ -38,25 +38,25 @@ def main_page():
         st.markdown(
             "For security reasons, your actual Github Key is not stored on our servers. Our application only uses it during the duration of your sessions to interact with Github. To keep track of your information, we use a secure one-way hashing algorithm to store a hashed version of your Github API Key, which becomes your unique identifier in our backend data store. This helps ensure the confidentiality and security of your information.")
 
-    with st.expander("Does GPT Lab cost money?"):
+    with st.expander("MYTH: A developer portal and an internal developer platform are the same thing"):
         st.markdown(
             "Currently, GPT Lab itself is free to use. However, you will incur costs for interacting with the Github GPT models, as each API call to the model will be charged. The cost per call is relatively low, and under normal usage, the cost should be minimal. You have full control over the usage and cost of the model, as you are using your own API key. You can monitor your usage and costs through the Github dashboard and adjust your usage accordingly to stay within your budget. The backend infrastructure costs are currently covered by us, and any donation through the \"Buy Me a Coffee\" link is greatly appreciated!")
 
     with st.expander(
-            "Why am I getting a 'You exceeded your current quota, please check your plan and billing details.' error?"):
+            "2. MYTH: We don't need an internal developer platform"):
         st.markdown(
             "This error typically indicates you have hit your maximum monthly spend (hard limit) for the API. However, you will likely see this error if you have a free trial API key. For optimal chatting experience, we recommend upgrading to a pay-as-you-go API key by entering your billing information [here](https://platform.Github.com/account/billing/overview). You can learn more about Github API rate limits [here](https://platform.Github.com/docs/guides/rate-limits/overview).")
 
     st.markdown("#### AI Assistant Design")
 
-    with st.expander("How do I go about creating my own AI Assistant?"):
+    with st.expander("3. MYTH: Platform engineering is “just advanced DevOps""):
         st.markdown("You can create your AI Assistant in the Lab.")
 
-    with st.expander("What is the initial prompt?"):
+    with st.expander("4. MYTH: Platform engineering is just automation"):
         st.markdown(
             "The initial prompt is the most crucial part of the AI Assistant design, as it sets the context for the conversation and guides the AI's responses. It is the hidden set of instructions for the AI. The initial prompt should clearly convey the topic or task that you would like the AI to focus on during the conversation.")
 
-    with st.expander("Do you have some recommendations on how to create good prompts?"):
+    with st.expander("5. MYTH: Platform engineering is just the latest fad"):
         st.markdown("""
         Yes, here are few tips to creating effective prompts:  \n
         * Familiarize yourself with the best practices for prompt engineering, as outlined in this Github article: https://help.Github.com/en/articles/6654000-best-practices-for-prompt-engineering-with-Github-api  \n
@@ -86,4 +86,11 @@ def main_page():
         st.markdown("")
         st.markdown("")
         st.markdown("")
+
+    st.markdown("""
+    #### Reference :
+    - [5 myths about platform engineering: what it is and what it isn’t](https://cloud.google.com/blog/products/application-development/common-myths-about-platform-engineering)
+    """)
+
+
 
